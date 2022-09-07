@@ -61,3 +61,11 @@ print("Float division:\n{}".format(matrix_1/matrix_2))
 print("Integer division:\n{}".format(matrix_1//matrix_2))
 # Matrix multiplication
 print("Matrix multiplication:\n{}".format(np.matmul(matrix_1, matrix_2)))
+
+
+# Statistics
+print("Min:{}".format(np.min(matrix_1)))  # np.min()
+print("Max:{}".format(np.max(matrix_1)))  # np.max()
+print("Sum of elements:{}".format(np.sum(matrix_1)))  # np.sum()
+print("Mean of elements:{}".format(np.mean(matrix_1)))  # np.mean()
+print("Standard deviaiton of elements:{}".format(np.std(matrix_2)))  # np.std()
