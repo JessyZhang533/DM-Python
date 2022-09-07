@@ -15,3 +15,10 @@ print(my_dataframe_2)
 my_dic = {'Fruit': ['Apple', 'Banana', 'Plum'], 'Color': ['red', 'yellow', 'black']}
 my_dataframe_3 = pd.DataFrame(my_dic)
 print(my_dataframe_3)
+
+
+# Loading csv file as dataframe
+# First row of csv file-->column labels
+# numerical values automatically assigned as row labels
+df = pd.read_csv('cereals.csv')
+print(df)
