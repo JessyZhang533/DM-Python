@@ -45,3 +45,19 @@ print("Float division:\n{}".format(my_2d_array/2))
 print("Integer division:\n{}".format(my_2d_array//2))
 # Raise to a power (CANNOT be performed on lists)
 print("\nRaise to a power:\n{}".format(my_2d_array**2))
+
+
+# Take transpose of matrix (2d-array) (CANNOT be performed on lists)
+print("\nTranspose: {}".format(my_2d_array.T))
+
+
+# Element wise operation (CANNOT be performed on lists)
+# Addition & subtraction & multiplication
+matrix_1 = np.array([[1, 2], [4, 6]])
+matrix_2 = np.array([[7, 8], [4, 2]])
+print("Addition:\n{}\nSubtraction:\n{}Multiplication:\n{}".format(matrix_1 + matrix_2, matrix_1 - matrix_2, matrix_1*matrix_2))
+# Division
+print("Float division:\n{}".format(matrix_1/matrix_2))
+print("Integer division:\n{}".format(matrix_1//matrix_2))
+# Matrix multiplication
+print("Matrix multiplication:\n{}".format(np.matmul(matrix_1, matrix_2)))
