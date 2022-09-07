@@ -8,7 +8,7 @@ my_dataframe_1 = pd.DataFrame(my_list, columns=['Fruit', 'Color'])  # Default in
 print(my_dataframe_1)
 
 my_array = np.array([[1, 2], [3, 4], [5, 6]])
-my_dataframe_2 = pd.DataFrame(my_array, columns=['odd', 'even'])  # Default indices of rows & columns are integers starting from zero
+my_dataframe_2 = pd.DataFrame(my_array, index=['row1', 'row2', 'row3'], columns=['odd', 'even'])  # Default indices of rows & columns are integers starting from zero
 print(my_dataframe_2)
 
 # Creating a dataframe using dictionaries: keys-->column labels; values(encapsulated in lists)-->content os dataframe, same key same column
@@ -22,3 +22,10 @@ print(my_dataframe_3)
 # numerical values automatically assigned as row labels
 df = pd.read_csv('cereals.csv')
 print(df)
+
+# Changing the index column
+# 1.Set one of the existing index column as the new index column: .set_index()
+print(df.set_index('name'))  # Doesn't actually change df
+df.set_index('name', inplace=True)  # Does actually change df: inplace=True
+print(df)
+# 2.Change indices directly: see line 11 of code
