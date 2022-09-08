@@ -92,3 +92,10 @@ print(df.describe())
 # 1.Sort w.r.t. a column (ascending by default; alphabetically/numerically)
 print(df.sort_values('calories'))  # ascending
 print(df.sort_values('calories', ascending=False))  # descending
+
+
+# Exporting & saving a dataframe: .to_csv('filename.csv', index_label=...)-->depends on whether one wants to store row labels
+df_new = df[2:5]
+df_new.to_csv('my_file.csv', index_label=True)  # Store row labels (default)
+df_new_show = pd.read_csv('my_file.csv')
+print(df_new_show)
