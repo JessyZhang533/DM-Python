@@ -99,3 +99,10 @@ df_new = df[2:5]
 df_new.to_csv('my_file.csv', index_label=True)  # Store row labels (default)
 df_new_show = pd.read_csv('my_file.csv')
 print(df_new_show)
+
+
+# Concatenating dataframes: pd.concat([..., ..., ......], axis=...)
+df2 = df[0:3]
+df3 = df[6:9]
+print(pd.concat([df2, df3], axis=0))  # stack vertically
+print(pd.concat([df2, df3], axis=1))  # side-by-side: usually needs to set the indices of df2 and df3 to be the same beforehand
