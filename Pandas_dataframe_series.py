@@ -69,5 +69,19 @@ print(df.iloc[[2], [1]])
 print(df.iloc[0:3, 0:2])
 print(df.iloc[[0, 3], 0:2])
 
+# Adding and deleting rows and columns
+# 1.Adding rows: .loc[...] = [.., ..., ......]
+df.loc['new'] = [0, 0, 0, 0]  # Note: should match the number of columns
+print(df)
+# 2.Deleting rows: .drop(..., axis=0, inplace=True)-->dataframe wouldn't change if inplace=False
+df.drop('new', axis=0, inplace=True)
+print(df)
+# 3.Adding columns: [...] = [..., ..., ......]
+df['new'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # Note: should match th enumber of columns
+print(df)
+# 4.Deleting columns: .drop(..., axis=1, inplace=True)-->dataframe wouldn't change if inplace=False
+df.drop('new', axis=1, inplace=True)
+print(df)
+
 # .describe(): Get statistical summary of the dataframe https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 # print(df.describe())
