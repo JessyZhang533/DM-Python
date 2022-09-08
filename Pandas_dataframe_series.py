@@ -29,3 +29,24 @@ print(df.set_index('name'))  # Doesn't actually change df
 df.set_index('name', inplace=True)  # Does actually change df: inplace=True
 print(df)
 # 2.Change indices directly: see line 11 of code
+
+
+# .head(n): gives us the first n rows of our data frame or series by default.
+# .tail(n): gives us the last n rows of our data frame or series by default.
+print(df.head(3))
+print(df.tail(3))
+# [n:m]: row slicing, n inclusive, m exclusive; Doesn't actually change df
+print(df[1:4])
+# If we pass a list of boo lines to the brackets operator, we get another dataframe containing only
+# the rows for which the corresponding element in the list were true.
+second_row = [False, True, False, False, False, False, False, False, False, False]
+print(df[second_row])
+
+# INDEXING (Doesn't actually change df) https://www.geeksforgeeks.org/select-rows-columns-by-name-or-index-in-pandas-dataframe-using-loc-iloc/#:~:text=Indexing%20in%20Pandas%20means%20selecting,also%20known%20as%20Subset%20selection.
+# 1.column indexing: single column: []; multiple columns: [[]]
+# 2.row indexing: single row: .loc[]; multiple rows: .loc[[]]
+# print(df[['protein', 'rating']])
+print(df.loc[['Apple Jacks', 'All-Bran']])
+
+# .describe(): Get statistical summary of the dataframe https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
+# print(df.describe())
