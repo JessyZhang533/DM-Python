@@ -83,5 +83,12 @@ print(df)
 df.drop('new', axis=1, inplace=True)
 print(df)
 
+
 # .describe(): Get statistical summary of the dataframe https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
-# print(df.describe())
+print(df.describe())
+
+
+# SORTING
+# 1.Sort w.r.t. a column (ascending by default; alphabetically/numerically)
+print(df.sort_values('calories'))  # ascending
+print(df.sort_values('calories', ascending=False))  # descending
