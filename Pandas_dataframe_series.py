@@ -106,3 +106,8 @@ df2 = df[0:3]
 df3 = df[6:9]
 print(pd.concat([df2, df3], axis=0))  # stack vertically
 print(pd.concat([df2, df3], axis=1))  # side-by-side: usually needs to set the indices of df2 and df3 to be the same beforehand
+
+
+# Group the dataframe on the basis of a column: .groupby(x['column_label'])
+df4 = pd.DataFrame({'Gender': ['female', 'male', 'female', 'male'], 'Grade': [100, 79, 87, 89]})
+print(df4.groupby('Gender').mean())  # Note: does not perform aggregate function (eg.mean()) on the column grouped by (eg.'Gender')
