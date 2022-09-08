@@ -63,5 +63,11 @@ print(df.loc['100% Bran':'All-Bran', 'calories':'protein'])
 # .loc[[..., ...], ...:...]: index rows, slice columns; vice versa
 print(df.loc[['100% Bran', 'All-Bran'], 'calories':'protein'])
 
+# .iloc: essentially same as .loc, but takes position rather than names as arguments
+print(df.iloc[2, 1])
+print(df.iloc[[2], [1]])
+print(df.iloc[0:3, 0:2])
+print(df.iloc[[0, 3], 0:2])
+
 # .describe(): Get statistical summary of the dataframe https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.describe.html
 # print(df.describe())
