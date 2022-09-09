@@ -77,7 +77,7 @@ print(df)
 df.drop('new', axis=0, inplace=True)
 print(df)
 # 3.Adding columns: [...] = [..., ..., ......]
-df['new'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # Note: should match th enumber of columns
+df['new'] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]  # Note: should match the number of columns
 print(df)
 # 4.Deleting columns: .drop(..., axis=1, inplace=True)-->dataframe wouldn't change if inplace=False
 df.drop('new', axis=1, inplace=True)
