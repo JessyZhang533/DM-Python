@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 from numpy import NaN
 from statistics import mode
+import re
 
 
 X = pd.Series([2.1, 2.2, 4.5, 2.2, 2.3])
@@ -63,3 +64,30 @@ print(df_1.dropna(inplace=False))
 # 4. .fillna(): replacing missing data with mean/median/mode; inplace=True to actually change the dataframe
 print(df_1.fillna(df_1.mean(), inplace=False))
 print(df_1.fillna(mode(df_1['Age']), inplace=False))
+
+
+# Regular expression (RegEx): an expression containing sequence of characters for matching patterns in strings
+# 1.re.findall(): match all occurences of a pattern in a string; return a list with all matchings
+# (1) re.findall('...', string)
+string_1 = "I love Python. Python is the best programming language."
+print(re.findall('Python', string_1))  # Find expressions in the string matching 'Python'
+# (2) re.findall('^...', string)
+string_2 = "Python is the best programming language. I love Python."
+print(re.findall('^Python', string_1), re.findall('^Python', string_2))  # See if the string starts with Python
+# (3) re.findall('\d', string)
+string_3 = "Python was released in 1991 "
+print(re.findall(r'\d', string_3))  # Match the numbers seperately
+# (4) re.findall('\d+', string)
+print(re.findall(r'\d+', string_3))  # Make sure that some numbers are treated as a whole
+# 2. .to_string(): convert a Series to a string
+string_4 = ['China', 'UK', 'US', 'Italy', 'China']
+series_of_string_4 = pd.Series(string_4)
+print(series_of_string_4)
+print(re.findall('China', series_of_string_4.to_string()))
+# 3.re.search(): returns a match object in case of a pattern match the string; get position of match using .span()
+match_object = re.search('Python', string_1)
+print(match_object)
+print(match_object.span())
+# 4.re.sub(): replace a txt in a string with a different txt
+string_5 = "Java is my favourite programming language"
+print(re.sub(pattern='Java', repl='Python', string=string_5))
