@@ -91,3 +91,13 @@ print(match_object.span())
 # 4.re.sub(): replace a txt in a string with a different txt
 string_5 = "Java is my favourite programming language"
 print(re.sub(pattern='Java', repl='Python', string=string_5))
+
+
+# Feature Scaling
+# 1.Normalization: scales all features in the range [0,1]
+df_2 = pd.DataFrame({'Age': [27, 28, 33, 30, 27], 'Salary': [100000, 15000, 18000, 25000, 17000]})
+print(df_2)
+print((df_2 - df_2.min()) / (df_2.max() - df_2.min()))
+# 2.Standardization
+print((df_2 - df_2.mean()) / df_2.std())
+# Note: .min, .max, .mean, .std....automatically takes values by column
